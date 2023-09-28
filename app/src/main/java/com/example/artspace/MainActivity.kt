@@ -1,5 +1,6 @@
 package com.example.artspace
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,7 +8,6 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,6 +23,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -38,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
@@ -83,6 +85,19 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
         R.drawable._0_sacha_schneider,
     )
 
+    val contentDescriptionArtwork = listOf(
+        R.string.firstArtwork_picture,
+        R.string.secondArtwork_picture,
+        R.string.thirdArtwork_picture,
+        R.string.fourthArtwork_picture,
+        R.string.fifthArtwork_picture,
+        R.string.sixthArtwork_picture,
+        R.string.seventhArtwork_picture,
+        R.string.eighthArtwork_picture,
+        R.string.ninthArtwork_picture,
+        R.string.tenthArtwork_picture,
+    )
+
     val titles = listOf(
         R.string.firstArtwork,
         R.string.secondArtwork,
@@ -123,8 +138,10 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
     )
 
 
+//variable de estado para el componente de cambio
     var currentIndex by remember { mutableStateOf(0) }
 
+//funciones para los botones
     fun previousImage() {
         currentIndex = (currentIndex - 1).coerceIn(0, imagesResources.size - 1)
     }
@@ -160,9 +177,11 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
 
         ArtworkTextAndImage(
             currentArtwork = imagesResources[currentIndex],
+            contentDescriptionArtwork= contentDescriptionArtwork[currentIndex],
             title = titles[currentIndex],
             year = years[currentIndex],
             description = descriptions[currentIndex],
+
         )
 
         Row(
@@ -179,7 +198,7 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
                     .padding(end = 4.dp),
 
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(id = R.color.teal_200)
+                    containerColor = colorResource(id = R.color.teal_100)
                 ),
                 elevation = ButtonDefaults.elevatedButtonElevation(
                     defaultElevation = 1.dp,
@@ -214,7 +233,7 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
                     .padding(start = 4.dp),
 
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(id = R.color.teal_200)
+                    containerColor = colorResource(id = R.color.teal_100)
                 ),
 
                 elevation = ButtonDefaults.elevatedButtonElevation(
@@ -234,9 +253,11 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
     }
 }
 
+@SuppressLint("ResourceType")
 @Composable
 fun ArtworkTextAndImage(
     @DrawableRes currentArtwork: Int,
+    @StringRes contentDescriptionArtwork: Int,
     @StringRes title: Int,
     @StringRes year: Int,
     @StringRes description: Int
@@ -251,16 +272,24 @@ fun ArtworkTextAndImage(
 
 
         ) {
-        Box(
+        Card(
             modifier = Modifier
                 .height(440.dp)
-                .clip(RoundedCornerShape(28.dp))
-                .border(3.dp, colorResource(id = R.color.teal_200), RoundedCornerShape(28.dp))
+                .shadow(
+                    shape = RoundedCornerShape(28.dp),
+                    spotColor = colorResource(id = R.color.teal_500),
+                    elevation = 5.dp
+                )
+                .padding(5.dp),
+
+                //.border(3.dp, colorResource(id = R.color.teal_200), RoundedCornerShape(28.dp))
+            shape = RoundedCornerShape(28.dp),
+
 
         ) {
             ArtworkImage(
-                modifier = Modifier.fillMaxSize(),
                 currentArtwork = currentArtwork,
+                contentDescriptionArtwork = contentDescriptionArtwork,
             )
         }
 
@@ -278,14 +307,16 @@ fun ArtworkTextAndImage(
 }
 
 
+@SuppressLint("ResourceType")
 @Composable
 fun ArtworkImage(
     @DrawableRes currentArtwork: Int,
-    modifier: Modifier
+    @DrawableRes contentDescriptionArtwork: Int,
 ) {
     Image(
+        modifier = Modifier.fillMaxSize(),
         painter = painterResource(id = currentArtwork),
-        contentDescription = null,
+        contentDescription = stringResource(id = contentDescriptionArtwork),
         contentScale = ContentScale.Crop
     )
 }
