@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Art Space</string>
+
+    <string name="denji">Denji</string>
+    <string name="denji_year">2023</string>
+    <string name="zero_two">Zero Two</string>
+    <string name="zero_two_year">2021</string>
+    <string name="sanji">Sanji</string>
+    <string name="sanji_year">2022</string>
+    <string name="naruto">Naruto</string>
+    <string name="naruto_year">2020</string>
+
+    <string name="firstArtwork">Jacob Wrestling with the Angel</string>
+    <string name="firstArtwork_year">1855</string>
+    <string name="firstArtwork_description">Gustave Dore</string>
+    <string name="firstArtwork_picture">Jacob Wrestling with the Angel</string>
+
+    <string name="secondArtwork">The inferno, Canto 15</string>
+    <string name="secondArtwork_year">1861</string>
+    <string name="secondArtwork_description">Gustave Dore</string>
+    <string name="secondArtwork_picture">The inferno, Canto 15</string>
+
+    <string name="thirdArtwork">The inferno, Canto 21</string>
+    <string name="thirdArtwork_year">1861</string>
+    <string name="thirdArtwork_description">Gustave Dore</string>
+    <string name="thirdArtwork_picture">The inferno, Canto 21</string>
+
+    <string name="fourthArtwork">The inferno, Canto 5</string>
+    <string name="fourthArtwork_year">1861</string>
+    <string name="fourthArtwork_description">Gustave Dore</string>
+    <string name="fourthArtwork_picture">The inferno, Canto 5</string>
+
+    <string name="fifthArtwork">The inferno, Canto 7</string>
+    <string name="fifthArtwork_year">1861</string>
+    <string name="fifthArtwork_description">Gustave Dore</string>
+    <string name="fifthArtwork_picture">The inferno, Canto 7</string>
+
+    <string name="sixthArtwork">Paradiso, Canto 34</string>
+    <string name="sixthArtwork_year">1868</string>
+    <string name="sixthArtwork_description">Gustave Dore</string>
+    <string name="sixthArtwork_picture">Paradiso, Canto 34</string>
+
+    <string name="seventhArtwork">Dwarf Journey to Arthur\'s Court</string>
+    <string name="seventhArtwork_year">1868</string>
+    <string name="seventhArtwork_description">Lord Alfred Tennyson</string>
+    <string name="seventhArtwork__picture">Dwarf Journey to Arthur\'s Court</string>
+
+    <string name="eighthArtwork">The Vision of Death</string>
+    <string name="eighthArtwork_year">1868</string>
+    <string name="eighthArtwork_description">Gustave Dore</string>
+    <string name="eighthArtwork_picture">The Vision of Death</string>
+
+    <string name="ninthArtwork">The Vision of the Valley of Dry Bones</string>
+    <string name="ninthArtwork_year">1866</string>
+    <string name="ninthArtwork_description">Gustave Dore</string>
+    <string name="ninthArtwork_picture">The Vision of the Valley of Dry Bones</string>
+
+    <string name="tenthArtwork">Emotion of Dependency</string>
+    <string name="tenthArtwork_year">1893</string>
+    <string name="tenthArtwork_description">Sascha Schneider</string>
+    <string name="tenthArtwork_picture">Emotion of Dependency</string>
+
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="author">Joshua Chicame-2074121</string>
+    <string name="illustrated_by">illustrated by %1$s</string>
+
+</resources>
